@@ -88,14 +88,15 @@ public class Main {
 
     public static void task7(){
         int age = 25, salary = 60_000, wantedSum = 330_000;
-        double maxCredit, percent = 1.1;
+        double monthPayment, percent = 1.1;
+
         if (age < 23) percent += 0.01;
         else if(age < 30) percent += 0.005;
 
         if(salary >= 80_000) percent -= 0.007;
 
-        maxCredit = salary * 0.5 * 12 * percent;
-        if (wantedSum <= maxCredit) System.out.printf("Максимальный платеж при ЗП %d равен %.0f рублей.\nПлатеж по кредиту %.0f рублей.\nОдобрено", salary, maxCredit, salary * 0.5);
-        else System.out.printf("Максимальный платеж при ЗП %d равен %.0f рублей.\nПлатеж по кредиту %.0f рублей.\nОтказано", salary, maxCredit, salary * 0.5);
+        monthPayment = wantedSum * percent / 12;
+        if (salary * 0.5 >= monthPayment) System.out.printf("Максимальный платеж при ЗП %d равен %.0f рублей.\nПлатеж по кредиту %.0f рублей.\nОдобрено", salary, salary * 0.5, monthPayment);
+        else System.out.printf("Максимальный платеж при ЗП %d равен %.0f рублей.\nПлатеж по кредиту %.0f рублей.\nОтказано", salary, salary*0.5, monthPayment);
     }
 }
