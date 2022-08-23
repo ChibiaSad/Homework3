@@ -81,12 +81,13 @@ public class Main {
         if (age >= 23) credit *= 3;
         else credit *= 2;
 
-        if (salary >= 50_000 && salary < 80_000) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + credit * 1.2 + " рублей");
-        else if(salary >= 80_000) System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + credit * 1.5 + " рублей");
-        else System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + credit + " рублей");
+        if (salary >= 50_000 && salary < 80_000) credit *= 1.2;
+        else if(salary >= 80_000) credit *= 1.5;
+
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + credit + " рублей");
     }
 
-    public static void task7(){
+    public static void task7() {
         int age = 25, salary = 60_000, wantedSum = 330_000;
         double monthPayment, percent = 1.1;
 
