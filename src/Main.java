@@ -11,8 +11,13 @@ public class Main {
 
     public static void task1(){
         int clientOS = 1;
-        if(clientOS == 1) System.out.println("Установите версию приложения для Android по ссылке");
-        else System.out.println("Установите версию приложения для iOS по ссылке");
+        if(clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if(clientOS == 0){
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {
+            System.out.println("Ваша ОС не поддерживается");
+        }
     }
 
     public static void task2(){
@@ -20,16 +25,24 @@ public class Main {
         if(clientOS == 1) {
             if(clientDeviceYear >= 2015){
                 System.out.println("Установите версию приложения для Android по ссылке");
-            } else System.out.println("Установите lite версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите lite версию приложения для Android по ссылке");
+            }
         }
-        else if(clientDeviceYear >= 2015){
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        } else System.out.println("Установите lite версию приложения для iOS по ссылке");
+        else if(clientOS == 0){
+            if(clientDeviceYear >= 2015){
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите lite версию приложения для iOS по ссылке");
+            }
+        } else {
+            System.out.println("Ваша ОС не поддерживается");
+        }
     }
 
     public static void task3(){
         int currentYear = 2022;
-        System.out.println(currentYear % 4 == 0 && currentYear % 100 != 0 ? currentYear + " год является високосным" : currentYear + " год не является високосным");
+        System.out.println(currentYear % 4 == 0 && currentYear % 100 != 0 || currentYear % 400 == 0 ? currentYear + " год является високосным" : currentYear + " год не является високосным");
     }
 
     public static void task4(){
@@ -41,6 +54,8 @@ public class Main {
             deliveryTime += 2;
         } else if (deliveryDistance <= 100){
             deliveryTime += 3;
+        } else {
+            System.out.println("Вы вне зоны доставки");
         }
         System.out.println("Потребуется дней: " + deliveryTime);
     }
