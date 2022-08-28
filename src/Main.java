@@ -28,8 +28,7 @@ public class Main {
             } else {
                 System.out.println("Установите lite версию приложения для Android по ссылке");
             }
-        }
-        else if(clientOS == 0){
+        } else if(clientOS == 0){
             if(clientDeviceYear >= 2015){
                 System.out.println("Установите версию приложения для iOS по ссылке");
             } else {
@@ -48,7 +47,7 @@ public class Main {
     public static void task4(){
         int deliveryDistance = 95;
         int deliveryTime = 0;
-        if (deliveryDistance <= 20){
+        if (deliveryDistance <= 20 && deliveryDistance >= 0){
             deliveryTime += 1;
         } else if (deliveryDistance <= 60){
             deliveryTime += 2;
